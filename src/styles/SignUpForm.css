@@ -1,0 +1,16 @@
+/* src/styles/SignUpForm.css */
+
+.card-title {
+    font-size: 1.5rem; /* Adjust font size as needed */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Adjust font size as needed */
+  }
+  
+  .form-check-label {
+    font-size: 0.9rem; /* Adjust font size as needed */
+  }
+  
+  /* Additional styles for layout, spacing, etc. */
+  

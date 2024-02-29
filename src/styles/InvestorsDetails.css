@@ -1,0 +1,78 @@
+/* InvestorDetails.css */
+
+:root {
+  /* Define your color palette here if not already in index.css */
+  --primary-color: #7469b6; /* Example primary color */
+  --secondary-color: #ad88c7; /* Example secondary color */
+  --background-color: #ffe6e6; /* Example background color */
+  --detail-color: #e1afd1; /* Example detail color */
+}
+
+/* Style the InvestorDetails container */
+.investor-details-container {
+  padding: 20px;
+  margin: 20px auto; /* Center the container */
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the heading for the details section */
+.investor-details-heading {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem; /* Space below the heading */
+}
+
+/* Style the details table to match the main investors table */
+.investor-details-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--primary-color);
+}
+
+/* Table header styles */
+.investor-details-table th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  border: 1px solid var(--secondary-color);
+}
+
+/* Table body styles */
+.investor-details-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--secondary-color);
+  background-color: white; /* Clear background for readability */
+  color: var(--primary-color);
+}
+
+/* Dropdown styling */
+.dropdown-container {
+  text-align: center; /* Center the dropdown */
+  margin-bottom: 1rem; /* Space below the dropdown */
+}
+
+.dropdown {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  color: var(--primary-color);
+  background-color: white;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+  .investor-details-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .dropdown-container {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Add any additional custom styles specific to the InvestorDetails component */

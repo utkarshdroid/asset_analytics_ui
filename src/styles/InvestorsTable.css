@@ -1,0 +1,94 @@
+/* InvestorsTable.css */
+
+
+.investors-table-container {
+    margin: 20px;
+    position: relative; /* Needed for absolute positioning of children */
+  }
+  
+  .page-heading {
+    text-align: center;
+    margin-bottom: 1rem; /* Spacing below the heading */
+  }
+  
+  /* Adjust the table header group to position the search icon */
+  .table-header-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem; /* Padding to match the table row padding */
+  }
+  
+  /* Search icon to toggle the search input */
+  .search-icon {
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust size as needed */
+    position: absolute;
+    right: 1.5rem; /* Align with the right side of the table */
+    top: 1rem; /* Position below the heading */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  /* Style the search input container */
+  .search-input-container {
+    position: absolute;
+    right: 1.5rem;
+    top: 3rem; /* Position below the heading and search icon */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  /* Style the search input with asymmetric padding */
+  .global-filter-input {
+    padding-top: 1rem; /* Twice the bottom padding */
+    padding-bottom: 0.5rem;
+    padding-right: 2.5rem; /* Space for the close icon */
+    padding-left: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  /* Style the close icon inside the search input */
+  .close-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem; /* Adjust size as needed */
+  }
+  
+  /* Table styles */
+  .table-custom {
+    width: 100%;
+    margin-top: 2rem; /* Space below the search input */
+    border-collapse: collapse;
+    /* Add more styling for the table as needed */
+  }
+  .table tbody tr:hover {
+    cursor: pointer; /* Hand icon on hover */
+    background-color: #f2f2f2; /* Optional: change background color on hover */
+  }
+  .table th {
+    cursor: pointer; /* Indicates the header is clickable */
+    /* ... existing styles ... */
+  }
+/* Responsive table styling */
+@media screen and (max-width: 768px) {
+  .investors-table-container {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .table-custom {
+    margin-top: 1rem; /* Adjust for smaller screens */
+  }
+
+  .search-input-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .global-filter-input {
+    width: calc(100% - 2.5rem); /* Adjust for full width */
+  }
+}
