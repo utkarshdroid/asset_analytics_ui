@@ -11,7 +11,9 @@ const LoginForm = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     const result = await login(username, password);
+    console.log(username, password)
     if (result.success) {
+
       // Navigate to the investors table route upon successful login
       navigate("/investors");
     } else {
@@ -25,15 +27,15 @@ const LoginForm = () => {
       {" "}
       {/* Increased width */}
       <Card.Body>
-        <Form>
+        <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" />
+            <Form.Control type="text" placeholder="Enter username" value={username} onChange={(e)=>setUsername(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
           </Form.Group>
 
           <Row className="mt-4">

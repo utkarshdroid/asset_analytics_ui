@@ -10,13 +10,22 @@ const InvestorsTable = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [showSearch, setShowSearch] = useState(false);  
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   useEffect(() => {
     // Here you would fetch your data from the server in a real app
     // For simplicity, we're using a static import
     const fetchData = async () => {
-      const response = await import('../data/dummy.json');
-      setData(response.default);
+        fetch(`http://localhost:8000/api/investors`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => setData(data))
+        .catch(e => setError(e.message))
+        .finally(() => setIsLoading(false));
     };
 
     fetchData();
@@ -24,10 +33,10 @@ const InvestorsTable = () => {
 
   const columns = useMemo(
     () => [
-      { Header: 'FirmId', accessor: 'firm_id' },
-      { Header: 'FirmName', accessor: 'firm_name' },
+      { Header: 'Firm Id', accessor: 'firm_id' },
+      { Header: 'Firm Name', accessor: 'firm_name' },
       { Header: 'Type', accessor: 'firm_type' },
-      { Header: 'DateAdded', accessor: 'date_added', Cell: ({ value }) => new Date(value).toLocaleDateString() },
+      { Header: 'Date Added', accessor: 'date_added', Cell: ({ value }) => new Date(value).toLocaleDateString() },
       { Header: 'Address', accessor: 'address' },
     ],
     []
@@ -63,6 +72,9 @@ const InvestorsTable = () => {
     <div className="investors-table-container">
       <h2 className="page-heading">Fund Information</h2>
       <div className="table-header-group">
+      {isLoading && <p>Loading...</p>}
+      {error && <p className="text-danger">Error: {error}</p>}
+
         {showSearch ? (
           <div className="search-input-container">
             <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />

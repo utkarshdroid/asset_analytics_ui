@@ -31,15 +31,15 @@
 
 // export default login;
 
-const USERNAME = 'admin';
-const PASSWORD = 'password123';
+const USERNAME = 'root';
+const PASSWORD = 'root';
 
 const login = async (username, password) => {
   // Simulate an API call with a delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
 
   // Check if the credentials match the hardcoded ones
   if (username === USERNAME && password === PASSWORD) {
+    console.log('true')
     return { success: true };
   } else {
     return { success: false, error: 'Invalid credentials' };
