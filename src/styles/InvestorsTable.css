@@ -63,7 +63,7 @@
     margin-top: 2rem; /* Space below the search input */
     border-collapse: collapse;
     /* Add more styling for the table as needed */
-  }
+  } 
   .table tbody tr:hover {
     cursor: pointer; /* Hand icon on hover */
     background-color: #f2f2f2; /* Optional: change background color on hover */

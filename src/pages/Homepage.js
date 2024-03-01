@@ -10,16 +10,16 @@ const Homepage = () => {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Asset Analytics</Navbar.Brand>
+          <Navbar.Brand href="/">Asset Analytics</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {showSignUp ? (
                 <>
-                <Nav.Link href="#about">About Us</Nav.Link>
-                <Nav.Link href="#contact">Contact Us</Nav.Link>
+                <Nav.Link href="/about">About Us</Nav.Link>
+                <Nav.Link href="/contact">Contact Us</Nav.Link>
                 <Nav.Link href="#login" onClick={toggleForm}>Login</Nav.Link>
                 </>
               ) : (

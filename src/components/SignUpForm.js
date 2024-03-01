@@ -5,27 +5,27 @@ const SignUpForm = () => {
   return (
     <Card style={{ width: '35rem', margin: 'auto', marginTop: '5vh', padding: '20px' }}>
       <Card.Body>
-        <Card.Title className="card-title">Register</Card.Title>
-        <Card.Text className="card-text">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</Card.Text>
+        <Card.Title className="card-title" style={{ textAlign: 'center' }}>Register</Card.Title>
+        <Card.Text className="card-text">Welcome to Asset Analytics. Sign Up to get crucial insights of world fund management </Card.Text>
         <Form>
           <Row>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formFirstName">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" placeholder="e.g. John" />
+                <Form.Control type="text" placeholder="First Name" />
               </Form.Group>
             </Col>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formLastName">
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" placeholder="e.g. Smith" />
+                <Form.Control type="text" placeholder="Last Name" />
               </Form.Group>
             </Col>
           </Row>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email Address</Form.Label>
-            <Form.Control type="email" placeholder="e.g. john@your-domain.com" />
+            <Form.Control type="email" placeholder="Email Id" />
           </Form.Group>
 
           <Row>
@@ -40,8 +40,8 @@ const SignUpForm = () => {
             </Col>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formWebsite">
-                <Form.Label>Website</Form.Label>
-                <Form.Control type="text" placeholder="e.g. https://google.com" />
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" placeholder="Username" />
               </Form.Group>
             </Col>
           </Row>
@@ -69,7 +69,7 @@ const SignUpForm = () => {
             />
           </Form.Group>
 
-          <Button variant="warning" type="submit" className="w-100">
+          <Button variant="success" type="submit" className="w-100">
             Register
           </Button>
         </Form>

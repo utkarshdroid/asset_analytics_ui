@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
+
 import '../styles/InvestorsDetails.css'; // Ensure the path is correct and matches the file name
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 const InvestorDetails = () => {
+  const navigate = useNavigate();
   const { investorId } = useParams();
   const [assetClass, setAssetClass] = useState("");
   const [commitmentInfo, setCommitmentInfo] = useState([]);
@@ -26,12 +29,32 @@ const InvestorDetails = () => {
     }
   }, [assetClass, investorId]);
 
+  const handleLogout = () => {
+    localStorage.removeItem("loginToken"); // Remove the token from local storage
+    navigate("/"); // Redirect to the homepage
+  };
+
   const handleAssetClassChange = (e) => {
     setAssetClass(e.target.value);
     setCommitmentInfo([]); // Reset commitment info when asset class changes
   };
 
   return (
+    <>
+          <Navbar bg="dark" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="/">Asset Analytics</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="/about">About Us</Nav.Link>
+              <Nav.Link href="/contact">Contact Us</Nav.Link>
+              <Nav.Link  onClick={handleLogout} href="/">Logout</Nav.Link>
+              {/* Adjust the navigation and logic as necessary */}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     <div className="investor-details-container">
       <h1 className="investor-details-heading">Investor Commitment Details for ID: {investorId}</h1>
       <div className="dropdown-container">
@@ -42,7 +65,6 @@ const InvestorDetails = () => {
           className="dropdown"
           aria-label="Asset class select"
         >
-          <option value="">Select Asset Class</option>
           <option value="">Select Asset Class</option>
           <option value="PE">PE (Private Equity)</option>
           <option value="PD">PD (Private Debt)</option>
@@ -81,6 +103,7 @@ const InvestorDetails = () => {
         </table>
       )}
     </div>
+    </>
   );
 };
 
