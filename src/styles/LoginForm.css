@@ -1,0 +1,36 @@
+/* Login Form Container */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Input Fields Styling */
+  .form-container input[type="text"],
+  .form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Button Styling */
+  .form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7469B6; /* Primary color based on palette */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #5a5290; /* Darker shade for hover effect */
+  }
+  

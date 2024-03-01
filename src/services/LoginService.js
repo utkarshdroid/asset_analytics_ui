@@ -34,13 +34,23 @@
 const USERNAME = 'root';
 const PASSWORD = 'root';
 
+// Dummy token generation for demonstration purposes
+const generateToken = () => btoa(new Date().toISOString());
+
 const login = async (username, password) => {
   // Simulate an API call with a delay
+  await new Promise(resolve => setTimeout(resolve, 1000));
 
   // Check if the credentials match the hardcoded ones
   if (username === USERNAME && password === PASSWORD) {
-    console.log('true')
-    return { success: true };
+    const token = generateToken(); // Generate a dummy token
+    const expirationTime = new Date(new Date().getTime() + 15 * 60000); // Current time + 15 minutes
+
+    // Store the token and its expiration time in local storage
+    const tokenObj = { token, expirationTime: expirationTime.toISOString() };
+    localStorage.setItem('loginToken', JSON.stringify(tokenObj));
+
+    return { success: true, token };
   } else {
     return { success: false, error: 'Invalid credentials' };
   }

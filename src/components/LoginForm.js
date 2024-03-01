@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Form, Button, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import login from "../services/LoginService";
+import "../styles/LoginForm.css"
 
 const LoginForm = () => {
   const navigate = useNavigate();

@@ -1,12 +1,6 @@
 /* InvestorDetails.css */
 
-:root {
-  /* Define your color palette here if not already in index.css */
-  --primary-color: #7469b6; /* Example primary color */
-  --secondary-color: #ad88c7; /* Example secondary color */
-  --background-color: #ffe6e6; /* Example background color */
-  --detail-color: #e1afd1; /* Example detail color */
-}
+/*  */
 
 /* Style the InvestorDetails container */
 .investor-details-container {
