@@ -1,7 +1,12 @@
 /* InvestorDetails.css */
 
 /*  */
-
+.navbar-brand, .nav-link {
+  color: #FFE6E6 !important;
+}
+.navbar-custom .nav-link {
+  color: #FFFFFF !important; /* White for maximum contrast */
+}
 /* Style the InvestorDetails container */
 .investor-details-container {
   padding: 20px;

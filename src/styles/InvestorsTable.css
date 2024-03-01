@@ -1,6 +1,11 @@
 /* InvestorsTable.css */
 
-
+.navbar-brand, .nav-link {
+    color: #FFE6E6 !important;
+  }
+  .navbar-custom .nav-link {
+    color: #FFFFFF !important; /* White for maximum contrast */
+  }
 .investors-table-container {
     margin: 20px;
     position: relative; /* Needed for absolute positioning of children */

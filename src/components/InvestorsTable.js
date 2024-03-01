@@ -85,7 +85,7 @@ const InvestorsTable = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar  style={{ backgroundColor: '#7469B6' }} variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/">Asset Analytics</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
