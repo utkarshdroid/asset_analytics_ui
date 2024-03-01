@@ -17,7 +17,11 @@ const Homepage = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {showSignUp ? (
+                <>
+                <Nav.Link href="#about">About Us</Nav.Link>
+                <Nav.Link href="#contact">Contact Us</Nav.Link>
                 <Nav.Link href="#login" onClick={toggleForm}>Login</Nav.Link>
+                </>
               ) : (
                 <>
                   <Nav.Link href="#about">About Us</Nav.Link>
